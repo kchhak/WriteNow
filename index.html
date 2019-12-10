@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+  <title>WriteNow</title>
+  <script type="text/jacascript" src="dist/main.js"></script>
+</head>
+
+<body>
+  <div class="settings-page">
+    <h1>WriteNow</h1>
+    <p>So you want to write and you need to do it right now? Well get to it, and don't stop or there will be consequences. </p>
+
+    <p>Choose your difficulty:</p>
+
+    <form id="settings">
+      <label for="difficulty">
+        <h3>Difficulty</h3>
+      </label>
+      <input type="radio" name="difficulty" value="easy" checked/> Easy: Can't rush genius. You'll receive a gentle reminder if you've idled too long.
+      </br>
+      <input type="radio" name="difficulty" value="medium" checked/> Annoying: Write or face the wrath of annoying soundbytes.
+      </br>
+      <input type="radio" name="difficulty" value="hard" checked/> WriteNow: Keep writing or lose it all!
+      
+      <div class="time-select">
+        <label for="time">
+          <h3>Time Goal</h3> How many minutes do you want to commit to?
+        </label>
+        
+        <input type="number" name="time" value="10"/>
+
+        <label for="grace-period">
+          <h3>Grace Period</h3> How long do you want your reprieve to be?
+            <select name="grace-period">
+              <option value="5">5 seconds</option>
+              <option value="10">10 seconds</option>
+              <option value="15">15 seconds</option>
+              <option value="20">20 seconds</option>
+            </select>
+        </label>
+      </div>
+    </br>
+      <input type="submit" value="Start Writing!">
+    </form>
+  </div>
+
+
+</body>
