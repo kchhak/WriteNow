@@ -1,14 +1,13 @@
+const TextEditor = require("./text_editor.js");
+window.TextEditor = TextEditor;
+
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("settings").addEventListener("submit", e => {
     e.preventDefault();
+    console.log("pressed");
+    const settings = $("#settings").serializeArray();
+    const editor = new TextEditor(settings);
+    editor.startEditor();
 
-    let settings = $('form').serializeArray();
-
-    let difficulty = settings[0].value;
-    let time = settings[1].value;
-    let grace = settings[2].value;
-
-    document.getElementById("settings-page").classList.add("hidden");
-    document.getElementById("writing-box").classList.remove("hidden");
   })
 });
