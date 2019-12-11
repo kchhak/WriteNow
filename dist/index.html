@@ -2,7 +2,9 @@
 
 <head>
   <title>WriteNow</title>
-  <script type="text/jacascript" src="dist/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript" src="./main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -45,7 +47,9 @@
   </div>
 
   <div id="writing-box" class="hidden">
+    Words: <h2 id="wordcount"> </h2>
+    Time Remaining: <h2 id="timer"> </h2>
+    Grace: <h2 id="grace-timer"> </h2>
     <textarea id="textbox" rows=50 cols=150></textarea>
-    <div id="wordcount"> 0 </div>
   </div>
 </body>
