@@ -17,6 +17,11 @@ class TextEditor {
     }, 1000)
   }
 
+  closeEditor(){
+    document.getElementById("writing-box").classList.add("hidden");
+    document.getElementById("settings-page").classList.remove("hidden");
+  }
+
   tick() {
     if (this.running){
       this.time--;
@@ -65,10 +70,10 @@ class TextEditor {
       this.countdown = this.grace;
     })
 
-    if (this.countdown === -1){
-      alert("Start typing!")
-      this.countdown = this.grace;
-    }
+    // if (this.countdown === -1){
+    //   alert("Start typing!")
+    //   this.countdown = this.grace;
+    // }
   }
 
   setGraceTime() {
