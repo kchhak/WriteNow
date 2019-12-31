@@ -1,6 +1,10 @@
+const Consequences = require("./consequences.js");
+window.Consequences = Consequences;
+
 class TextEditor {
   constructor(options) {
     this.difficulty = options[0].value;
+    this.consequences = new Consequences(this.difficulty);
     this.time = options[1].value * 60;
     this.grace = options[2].value;
     this.countdown = this.grace;
@@ -18,6 +22,8 @@ class TextEditor {
   }
 
   closeEditor(){
+    this.running = false;
+    clearInterval();
     document.getElementById("writing-box").classList.add("hidden");
     document.getElementById("settings-page").classList.remove("hidden");
   }
@@ -70,10 +76,10 @@ class TextEditor {
       this.countdown = this.grace;
     })
 
-    // if (this.countdown === -1){
-    //   alert("Start typing!")
-    //   this.countdown = this.grace;
-    // }
+    if (this.countdown === -1){
+      this.consequences.runConsequences();
+      this.countdown = this.grace;
+    }
   }
 
   setGraceTime() {

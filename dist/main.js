@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/consequences.js":
+/*!*****************************!*\
+  !*** ./src/consequences.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (28:15)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n|   }\\n| \\n>   soundAlert() {\\n|     let keys = Object.keys(sounds);\\n|     let sound = sounds[keys[Math.floor(Math.random() * keys.length)]];\");\n\n//# sourceURL=webpack:///./src/consequences.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -102,9 +113,9 @@ eval("const TextEditor = __webpack_require__(/*! ./text_editor.js */ \"./src/tex
   !*** ./src/text_editor.js ***!
   \****************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("class TextEditor {\n  constructor(options) {\n    this.difficulty = options[0].value;\n    this.time = options[1].value * 60;\n    this.grace = options[2].value;\n    this.countdown = this.grace;\n    this.running = false;\n  }\n\n  startEditor() {\n    document.getElementById(\"settings-page\").classList.add(\"hidden\");\n    document.getElementById(\"writing-box\").classList.remove(\"hidden\");\n    this.running = true;\n    \n    setInterval(() => {\n      this.tick();\n    }, 1000)\n  }\n\n  closeEditor(){\n    document.getElementById(\"writing-box\").classList.add(\"hidden\");\n    document.getElementById(\"settings-page\").classList.remove(\"hidden\");\n  }\n\n  tick() {\n    if (this.running){\n      this.time--;\n      this.countdown--;\n    }\n\n    if (this.time <= 0) {\n      alert(\"You survived!\")\n    }\n\n    this.timeSinceType();\n    this.setTime();\n    this.setWordCount();\n  }\n\n  countWords(input) {\n    let words = input.split(\" \");\n    if (words[0] === \"\") return 0;\n\n    return words.length;\n  }\n\n  setWordCount() {\n    let count = this.countWords(document.getElementById(\"textbox\").value);\n    document.getElementById(\"wordcount\").innerHTML = count;\n  }\n\n  setTime() {\n    document.getElementById(\"timer\").innerHTML = this.formatTime(this.time);\n  }\n\n  formatTime(time) {\n    let min = String(Math.floor(this.time / 60));\n    let sec = String(this.time % 60);\n\n    if (min.length < 2) min = \"0\" + min;\n    if (sec.length < 2) sec = \"0\" + sec;\n\n    return min + \":\" + sec;\n  }\n  \n  timeSinceType() {\n    this.setGraceTime();\n\n    document.getElementById(\"textbox\").addEventListener(\"keyup\", () => {\n      this.countdown = this.grace;\n    })\n\n    // if (this.countdown === -1){\n    //   alert(\"Start typing!\")\n    //   this.countdown = this.grace;\n    // }\n  }\n\n  setGraceTime() {\n    document.getElementById(\"grace-timer\").innerHTML = this.countdown;\n  }\n}\n\n\nmodule.exports = TextEditor;\n\n//# sourceURL=webpack:///./src/text_editor.js?");
+eval("const Consequences = __webpack_require__(/*! ./consequences.js */ \"./src/consequences.js\");\nwindow.Consequences = Consequences;\n\nclass TextEditor {\n  constructor(options) {\n    this.difficulty = options[0].value;\n    this.consequences = new Consequences(this.difficulty);\n    this.time = options[1].value * 60;\n    this.grace = options[2].value;\n    this.countdown = this.grace;\n    this.running = false;\n  }\n\n  startEditor() {\n    document.getElementById(\"settings-page\").classList.add(\"hidden\");\n    document.getElementById(\"writing-box\").classList.remove(\"hidden\");\n    this.running = true;\n    \n    setInterval(() => {\n      this.tick();\n    }, 1000)\n  }\n\n  closeEditor(){\n    this.running = false;\n    clearInterval();\n    document.getElementById(\"writing-box\").classList.add(\"hidden\");\n    document.getElementById(\"settings-page\").classList.remove(\"hidden\");\n  }\n\n  tick() {\n    if (this.running){\n      this.time--;\n      this.countdown--;\n    }\n\n    if (this.time <= 0) {\n      alert(\"You survived!\")\n    }\n\n    this.timeSinceType();\n    this.setTime();\n    this.setWordCount();\n  }\n\n  countWords(input) {\n    let words = input.split(\" \");\n    if (words[0] === \"\") return 0;\n\n    return words.length;\n  }\n\n  setWordCount() {\n    let count = this.countWords(document.getElementById(\"textbox\").value);\n    document.getElementById(\"wordcount\").innerHTML = count;\n  }\n\n  setTime() {\n    document.getElementById(\"timer\").innerHTML = this.formatTime(this.time);\n  }\n\n  formatTime(time) {\n    let min = String(Math.floor(this.time / 60));\n    let sec = String(this.time % 60);\n\n    if (min.length < 2) min = \"0\" + min;\n    if (sec.length < 2) sec = \"0\" + sec;\n\n    return min + \":\" + sec;\n  }\n  \n  timeSinceType() {\n    this.setGraceTime();\n\n    document.getElementById(\"textbox\").addEventListener(\"keyup\", () => {\n      this.countdown = this.grace;\n    })\n\n    if (this.countdown === -1){\n      this.consequences.runConsequences();\n      this.countdown = this.grace;\n    }\n  }\n\n  setGraceTime() {\n    document.getElementById(\"grace-timer\").innerHTML = this.countdown;\n  }\n}\n\n\nmodule.exports = TextEditor;\n\n//# sourceURL=webpack:///./src/text_editor.js?");
 
 /***/ })
 
