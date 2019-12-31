@@ -67,11 +67,31 @@
       reach out through email or my links below!</p>
 
     <ul class="icons">
-      <li><i class="fab fa-angellist"></i><a href="https://angel.co/kaneka-chhak?public_profile=1"></a></li>
-      <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/kanekachhak/"></a></li>
-      <li><i class="fab fa-github"></i><a href="https://github.com/kchhak"></a></li>
-      <li><i class="far fa-envelope"></i><a href="mailto:kane.chhak@gmail.com"></a></li>
+      <li><a href="https://angel.co/kaneka-chhak?public_profile=1"><i class="fab fa-angellist"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/kanekachhak/"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="https://github.com/kchhak"><i class="fab fa-github"></i></a></li>
+      <li><a href="mailto:kane.chhak@gmail.com"><i class="far fa-envelope"></i></a></li>
       </ul>
   </section>
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyD55ix4DZhpiOKmCS3h0ZVlZWXY402xBCM",
+      authDomain: "writenow-fdda5.firebaseapp.com",
+      databaseURL: "https://writenow-fdda5.firebaseio.com",
+      projectId: "writenow-fdda5",
+      storageBucket: "writenow-fdda5.appspot.com",
+      messagingSenderId: "985355544478",
+      appId: "1:985355544478:web:e9499c992b6701353a588f",
+      measurementId: "G-DPENEPY9H7"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
 
