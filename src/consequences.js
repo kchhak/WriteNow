@@ -22,7 +22,6 @@ class Consequences {
       case "hard":
         deleteWords();
     }
-    }
   }
 
   soundAlert() {
