@@ -1,5 +1,4 @@
 # WriteNow
-![logo](https://github.com/kchhak/WriteNow/blob/master/dist/assets/logo.png?raw=true)
 
 [Live Demo](https://writenow-fdda5.web.app/)
 
@@ -24,6 +23,24 @@ Easy: users are simply alerted with a gentle reminder to keep writing
 Medium: randomized soundbytes play on loop until the user resumes typing
 
 WriteNow: if a user exceeds their grace period, words get deleted
+ 
+
+#### Live word count 
+
+Utilizes regex to filter whitespaces:
+
+```
+  countWords(input) {
+    input = input.replace(/^\s*|\s*$/g, "");
+    input = input.replace(/\s+/g, " ");
+    input = input.replace(/\n/g, " "); 
+
+    let words = input.split(" ");
+    if (words[0] === "") return 0;
+
+    return words.length;
+  }
+```
 
 
 ## Technologies

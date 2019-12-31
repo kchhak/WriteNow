@@ -51,6 +51,10 @@ class TextEditor {
   }
 
   countWords(input) {
+    input = input.replace(/^\s*|\s*$/g, "");
+    input = input.replace(/\s+/g, " ");
+    input = input.replace(/\n/g, " "); 
+
     let words = input.split(" ");
     if (words[0] === "") return 0;
 
