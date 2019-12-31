@@ -39,5 +39,5 @@ WriteNow: if a user exceeds their grace period, words get deleted
 * Track user history
 
 ## Credits
-*Inspired by [Dr. Wicked's Write or Die](https://writeordie.com/)
-*Royalty Free Sounds from Daniel Simion on [Soundbible](http://soundbible.com/)
+* Inspired by [Dr. Wicked's Write or Die](https://writeordie.com/)
+* Royalty Free Sounds from Daniel Simion on [Soundbible](http://soundbible.com/)
