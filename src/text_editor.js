@@ -22,25 +22,33 @@ class TextEditor {
   }
 
   closeEditor(){
-    this.running = false;
     clearInterval();
+    this.running = false;
+    this.consequences.stopSound();
+
+    document.getElementById("textbox").value = "";
+    document.getElementById("timer").innerHTML = "";
+    document.getElementById("wordcount").innerHTML = 0;
+
     document.getElementById("writing-box").classList.add("hidden");
     document.getElementById("settings-page").classList.remove("hidden");
+
   }
 
   tick() {
     if (this.running){
       this.time--;
       this.countdown--;
+      
+      if (this.time <= 0) {
+        alert("You survived!")
+      }
+  
+      this.timeSinceType();
+      this.setTime();
+      this.setWordCount();
     }
 
-    if (this.time <= 0) {
-      alert("You survived!")
-    }
-
-    this.timeSinceType();
-    this.setTime();
-    this.setWordCount();
   }
 
   countWords(input) {

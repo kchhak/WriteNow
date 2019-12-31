@@ -35,7 +35,7 @@ class Consequences {
   }
 
   stopSound() {
-    sound.pause();
+    if (sound) { sound.pause() }
   }
 
   deleteWords() {

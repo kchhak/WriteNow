@@ -1,12 +1,12 @@
 const TextEditor = require("./text_editor.js");
 window.TextEditor = TextEditor;
 
-let settings, editor;
+let editor;
 
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("settings").addEventListener("submit", e => {
     e.preventDefault();
-    settings = $("#settings").serializeArray();
+    let settings = $("#settings").serializeArray();
     editor = new TextEditor(settings);
     editor.startEditor();
   })
