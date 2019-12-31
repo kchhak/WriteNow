@@ -32,14 +32,13 @@ class TextEditor {
 
     document.getElementById("writing-box").classList.add("hidden");
     document.getElementById("settings-page").classList.remove("hidden");
-
   }
 
   tick() {
     if (this.running){
       this.time--;
       this.countdown--;
-      
+
       if (this.time <= 0) {
         alert("You survived!")
       }
@@ -48,7 +47,6 @@ class TextEditor {
       this.setTime();
       this.setWordCount();
     }
-
   }
 
   countWords(input) {
