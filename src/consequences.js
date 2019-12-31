@@ -1,9 +1,9 @@
 const sounds = {
-  dog: new Audio("http://soundbible.com/2215-Labrador-Barking-Dog.html"),
-  bell: new Audio("http://soundbible.com/2206-Tolling-Bell.html"),
-  alarm: new Audio("http://soundbible.com/2197-Analog-Watch-Alarm.html"),
-  seagulls: new Audio("http://soundbible.com/2193-Flock-Seagulls.html"),
-  whistle: new Audio("http://soundbible.com/2184-Police-Whistle.html")
+  dog: new Audio('../dist/assets/dog.mp3'),
+  bell: new Audio('../dist/assets/dog.mp3'),
+  alarm: new Audio('../dist/assets/dog.mp3'),
+  seagulls: new Audio('../dist/assets/dog.mp3'),
+  whistle: new Audio('../dist/assets/dog.mp3')
 }
 
 class Consequences {
