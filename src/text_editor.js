@@ -70,21 +70,16 @@ class TextEditor {
   }
   
   timeSinceType() {
-    this.setGraceTime();
-
     document.getElementById("textbox").addEventListener("keyup", () => {
       this.countdown = this.grace;
     })
 
-    if (this.countdown === -1){
+    if (this.countdown === 0){
       this.consequences.runConsequences();
       this.countdown = this.grace;
     }
   }
 
-  setGraceTime() {
-    document.getElementById("grace-timer").innerHTML = this.countdown;
-  }
 }
 
 

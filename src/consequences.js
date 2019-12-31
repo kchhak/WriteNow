@@ -17,10 +17,11 @@ class Consequences {
         alert("Get back to typing!");
         break;
       case "medium":
-        soundAlert();
+        this.soundAlert();
         break;
       case "hard":
-        deleteWords();
+        this.deleteWords();
+        break;
     }
   }
 
