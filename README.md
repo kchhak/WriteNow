@@ -8,11 +8,14 @@ Created with [NaNoWriMo](https://www.nanowrimo.org/) in mind, WriteNow is a simp
 
 The app is inspired by Dr. Wicked's Write or Die, but pared back with consideration to users with sensory sensitivities. The app does not contain any visual stimuli such as flashing lights or colors. 
 
+![demo](https://github.com/kchhak/WriteNow/blob/master/dist/assets/demo.png?raw=true)
+
 ## Functionality
 
 Users specify a difficulty, minute goal, and desired grace period. If a user goes too long without typing and exceeds the selected grace period, the consequences begin and continue until the user types again.
 
 ![alert](https://github.com/kchhak/WriteNow/blob/master/dist/assets/alert.png?raw=true)
+
 
 #### Modes
 
