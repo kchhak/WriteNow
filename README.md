@@ -1,5 +1,5 @@
 # WriteNow
-![logo](http://github.com/kchhak/WriteNow/blob/master/dist/assets/logo.png?raw=true)
+![logo](https://github.com/kchhak/WriteNow/blob/master/dist/assets/logo.png?raw=true)
 
 [Live Demo](https://writenow-fdda5.web.app/)
 
@@ -12,6 +12,8 @@ The app is inspired by Dr. Wicked's Write or Die, but pared back with considerat
 
 Users specify a difficulty, minute goal, and desired grace period. If a user goes too long without typing and exceeds the selected grace period, the consequences begin and continue until the user types again.
 
+![alert](https://github.com/kchhak/WriteNow/blob/master/dist/assets/alert.png?raw=true)
+
 #### Modes
 
 Easy: users are simply alerted with a gentle reminder to keep writing
@@ -22,9 +24,9 @@ WriteNow: if a user exceeds their grace period, words get deleted
 
 
 ## Technologies
-JavaScript
-HTML
-CSS
+* JavaScript
+* HTML
+* CSS
 
 ## Future Directions 
 * Add more sounds and alert messages for greater variety
