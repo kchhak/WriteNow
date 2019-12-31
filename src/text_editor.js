@@ -39,8 +39,9 @@ class TextEditor {
       this.time--;
       this.countdown--;
 
-      if (this.time <= 0) {
+      if (this.time === 0) {
         alert("You survived!")
+        this.running = false;
       }
   
       this.timeSinceType();

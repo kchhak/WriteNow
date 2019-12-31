@@ -3,53 +3,75 @@
 <head>
   <title>WriteNow</title>
   <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="https://kit.fontawesome.com/08257094a1.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 
 <body>
-  <div id="settings-page">
-    <h1>WriteNow</h1>
-    <p>So you want to write and you need to do it right now? Well get to it, and don't stop or there will be consequences. </p>
+  <section id="header">
+    <h1><i class="fas fa-edit"></i> WriteNow</h1>
+    <p>A text-editor with a twist</p>
+  </section id="header">
+  
+  <div id="main-content">
+    <div id="settings-page">
+      <p>So you want to write and you need to do it right now? Well get to it, and don't stop or there will be consequences. </p>
 
-    <p>Choose your difficulty:</p>
-
-    <form id="settings">
-      <label for="difficulty">
-        <h3>Difficulty</h3>
-      </label>
-      <input type="radio" name="difficulty" value="easy" checked/> Easy: Can't rush genius. You'll receive a gentle reminder if you've idled too long.
-      </br>
-      <input type="radio" name="difficulty" value="medium" checked/> Annoying: Write or face the wrath of annoying soundbytes.
-      </br>
-      <input type="radio" name="difficulty" value="hard" checked/> WriteNow: Keep writing or lose it all!
-      
-      <div class="time-select">
-        <label for="time">
-          <h3>Time Goal</h3> How many minutes do you want to commit to?
+      <form id="settings">
+        <label for="difficulty">
+          <h3>Difficulty</h3>
         </label>
+        <input type="radio" name="difficulty" value="easy" checked/> Easy: Can't rush genius. You'll receive a gentle reminder if you've idled too long.
+        </br>
+        <input type="radio" name="difficulty" value="medium" checked/> Annoying: Write or face the wrath of annoying soundbytes.
+        </br>
+        <input type="radio" name="difficulty" value="hard" checked/> WriteNow: Keep writing or lose it all!
         
-        <input type="number" name="time" value="10"/>
+        <div class="time-select">
+          <label for="time">
+            <h3>Time Goal</h3> How many minutes do you want to commit to?
+          </label>
+          
+          <input type="number" name="time" value="10"/>
 
-        <label for="grace-period">
-          <h3>Grace Period</h3> How long do you want your reprieve to be?
-            <select name="grace-period">
-              <option value="5">5 seconds</option>
-              <option value="10">10 seconds</option>
-              <option value="15">15 seconds</option>
-              <option value="20">20 seconds</option>
-            </select>
-        </label>
+          <label for="grace-period">
+            <h3>Grace Period</h3> How long do you want your reprieve to be?
+              <select name="grace-period">
+                <option value="5">5 seconds</option>
+                <option value="10">10 seconds</option>
+                <option value="15">15 seconds</option>
+                <option value="20">20 seconds</option>
+              </select>
+          </label>
+        </div>
+      </br>
+        <input type="submit" value="Start Writing!">
+      </form>
+    </div>
+
+    <div id="writing-box" class="hidden">
+      <textarea id="textbox" rows=50 cols=250></textarea>
+      <button id="restart">Restart</button>
+      
+      <div id="about">
+        Words: <h2 id="wordcount"> </h2>
+        Time Remaining: <h2 id="timer"> </h2>
       </div>
-    </br>
-      <input type="submit" value="Start Writing!">
-    </form>
+    </div>
   </div>
 
-  <div id="writing-box" class="hidden">
-    Words: <h2 id="wordcount"> </h2>
-    Time Remaining: <h2 id="timer"> </h2>
-    <button id="restart">Restart</button>
-    <textarea id="textbox" rows=50 cols=150></textarea>
-  </div>
+  <section id="footer">
+    <h2>Kaneka Chhak</h2>
+    <p>I am a software engineer currently seeking opportunities in frontend, server side, or end to end development.</br> Please feel free to
+      reach out through email or my links below!</p>
+
+    <ul class="icons">
+      <li><i class="fab fa-angellist"></i><a href="https://angel.co/kaneka-chhak?public_profile=1"></a></li>
+      <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/kanekachhak/"></a></li>
+      <li><i class="fab fa-github"></i><a href="https://github.com/kchhak"></a></li>
+      <li><i class="far fa-envelope"></i><a href="mailto:kane.chhak@gmail.com"></a></li>
+      </ul>
+  </section>
 </body>
+
