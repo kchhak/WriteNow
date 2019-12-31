@@ -72,6 +72,7 @@ class TextEditor {
   timeSinceType() {
     document.getElementById("textbox").addEventListener("keyup", () => {
       this.countdown = this.grace;
+      this.consequences.stopSound();
     })
 
     if (this.countdown === 0){
